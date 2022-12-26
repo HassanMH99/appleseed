@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<form action="process.php">
+    <div>
+        <label for="name">Name
+
+        </label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter The email">
+    </div>
+    <div>
+        <label for="massage">Massage</label>
+        <textarea name="massage" id="massage" cols="50" rows="5"></textarea>
+    </div>
+    <div>
+        <label for="sex">Sex</label>
+        <select name="sex" id="sex">
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+
+    </div>
+    <div>
+        <label for="birthday">birthday</label>
+        <input type="date" name="birthday" id="birthday">
+    </div>
+    <div>
+        <label for="membership">
+            membership
+        </label>
+        <input type="radio" name="membership" value="simple" id="mebmership">Simple
+        <input type="radio" name="membership" value="super" id="mebmership">super
+    
+    </div>
+<div>
+    <label for="hobbies">
+        hobbies
+    </label>
+    <input type="checkbox" name="hobbies" value="swim" id="mebmership">Swim
+    <input type="checkbox" name="hobbies" value="Chess" id="mebmership">Chess
+
+</div>
+<input type="Submit" value="Submit">
+</form>
+
+
+</body>
+</html>
