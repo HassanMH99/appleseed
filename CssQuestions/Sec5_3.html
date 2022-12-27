@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+          background-color: #00b8d4;
+          font-family: 'Roboto', sans-serif;
+          text-align: center
+          
+        }
+    /*   display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */
+        #container {
+          display: flex;
+          text-align: center;
+          position: absolute;
+          top: 10%;
+          left: 20%;
+          /* transform: translate(50%, 50%); */
+          flex-direction: column;
+          align-items: center;
+          /* margin: 40% 0; */
+          width: 50%;
+          height: 70%;
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          overflow: hidden;
+        }
+    
+        .profile-picture {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          margin: 30px 0;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    
+        .name {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          margin: 10px 0;
+        }
+    
+        .job-title {
+          font-size: 18px;
+          text-align: center;
+          margin: 10px 0;
+          color: #333333;
+        }
+    
+        .bio {
+          font-size: 16px;
+          text-align: center;
+          margin: 20px 0;
+          color: #666666;
+        }
+    
+        .social-links {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+        }
+    
+        .social-links a {
+          font-size: 18px;
+          margin: 0 10px;
+          color: #00b8d4;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+    
+        .social-links a:hover {
+          color: #ffffff;
+        }
+    
+        .cta-button {
+          font-size: 18px;
+          background-color: #00b8d4;
+          border: none;
+          border-radius: 5px;
+          color: #ffffff;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .cta-button:hover {
+          background-color: #0097a7;
+        }
+      </style>
+</head>
+<body>
+<form id="container" class="form-wrap">
+    <img class="profile-picture" src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/305426620_5396395113730698_5990200129042215519_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=P6k1YXfZJi0AX_lSol_&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfDFrocyb9ZiMkpqInUaMDpdha6rAbadR2fPonluKHB9AQ&oe=63ADA39D" alt="My profile image">
+    <h1 class="name">Mohammad Hassan</h1>
+    <h2 class="job-title">Programmer</h2>
+    <p class="bio">I am a programmer with experience in web development and software engineering. I enjoy solving challenging problems and learning new technologies.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/mohammad.hassan.5205/">Facebook</a>
+      <a href="https://www.linkedin.com/in/mohammad-hassan1999/">LinkedIn</a>
+      <a href="https://github.com/HassanMH99">GitHub</a>
+    </div>
+    <button class="cta-button">Click me!</button>
+  </form>
+</body>
+</html>
