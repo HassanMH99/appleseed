@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+       p{
+        text-align: center;
+        padding-top: 100px;
+       } 
+       @media(min-width:400px){
+            p{
+                font-size: small;
+                color: black;
+            }
+        }
+        @media(min-width:600px){
+            p{
+                font-size: medium;
+                color: red;
+            }
+
+        }   
+     @media(min-width:1200px){
+        p{
+                font-size: x-large;
+                color: blue;
+            }
+     }
+    </style>
+</head>
+<body>
+    <p>There is A Text</p>
+</body>
+</html>
