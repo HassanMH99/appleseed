@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+.border {
+  position: relative;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.border::before,
+.border::after {
+  content: "";
+  position: absolute;
+  border: 1px solid white;
+  width: calc(50% - 2px);
+  height: calc(50% - 2px);
+  box-sizing: border-box;
+}
+
+.border::before {
+  top: -2px;
+  left: -2px;
+  border-top-width: 6px;
+  border-left-width: 4px;
+}
+
+.border::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom-width: 6px;
+  border-right-width:4px;
+}
+
+.border::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.border::after {
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="border">
+    <p>cool Border</p>   
+   </div>
+      
+    
+</body>
+</html>
