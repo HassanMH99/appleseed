@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      li {
+        text-decoration: none;
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+        padding: 1rem ;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      nav {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+nav ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 0;
+  background-color: black;
+  transform-origin: right;
+  transition:  width 1s , opacity 1s;
+  opacity: 0;
+}
+nav ul li::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: black;
+  transform-origin: right;
+  transition:  width 1s , opacity 1s;
+  opacity: 0;
+}
+
+
+nav ul li:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+nav ul li:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+     
+    </style>
+    <title>Navbar Animation</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
