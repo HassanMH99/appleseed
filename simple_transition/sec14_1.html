@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .parent{
+            background-color: red;
+            width: 10rem;
+            height: 10rem;
+            position: relative;
+        }
+        .parent::after{
+            background-color: blue;
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 0;
+            height: 100%;
+            transition: width 2s;
+           
+            
+        }
+        .parent:hover::after{
+            width: 100%;
+        }
+       
+    </style>
+    <title>Simple transition</title>
+</head>
+<body>
+    <div class="parent">
+
+    </div>
+</body>
+</html>
