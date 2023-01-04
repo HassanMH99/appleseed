@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            border: 2px;
+            border-radius: 30px;
+            padding: 1rem;
+
+            }
+            .grid{
+                display: grid;
+                grid-template-areas: 
+                'Header Header Header'
+                'Sidebar content1 Slidebar2'
+                'Footer Footer Footer';
+                gap: 20px;
+
+            }
+            .Header{
+                grid-area: Header;
+            }
+            .Slidebar{
+                grid-area: Sidebar;
+            }
+            .Slidebar2{
+                grid-area: Slidebar2;
+            }
+            .Content{
+                grid-area: content1;
+            }
+            .Footer{
+                grid-area: Footer;
+            }
+            @media(max-width:1200px) {
+                .grid{
+                display: grid;
+                grid-template-areas: 
+                'Header Header Header'
+                'Sidebar content1 content1'
+                'Slidebar2 Slidebar2 Slidebar2'
+                'Footer Footer Footer';
+                gap: 20px;
+
+            } 
+            
+                
+            }
+            @media(max-width:500px){
+                .grid{
+                display: grid;
+                grid-template-areas: 
+                'Header' 
+                'Sidebar'
+                'content1'
+                'Slidebar2'
+                'Footer';
+                gap: 20px;
+
+            } 
+            }
+    </style>
+    <title>Gtird Example</title>
+</head>
+<body>
+    <div class="grid">
+        <div class= "Header" style="background-color: red;">Header</div>
+        <div class="Sidebar" style="background-color: blue;">SlideBar1</div>
+        <div class="Content" style="background-color: green;">Content
+            More content Than we had befor so this column is now quit tall
+        </div>
+        <div class="Slidebar2" style="background-color: purple;">
+            Sidebar 2
+        </div>
+        <div class="Footer" style="background-color: yellow;">Footer</div>
+    </div>
+    
+</body>
+</html>
