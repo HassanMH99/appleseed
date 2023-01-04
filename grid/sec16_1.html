@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid{
+            display: grid;
+            grid-template-areas:
+            'box1 box1 box2 box2'
+            'box3 box4 box4 box4'
+            'box5 box5 box5 box5';
+            padding: 1rem;
+            
+            grid-gap:1rem
+           
+        }
+        #box{
+            padding: 3rem;
+            border:  2px;
+            border-radius: 10px;
+            
+        }
+        .box1{
+            grid-area: box1;
+        }
+        .box2{
+            grid-area: box2;
+        }
+        .box3{
+            grid-area: box3;
+        }
+        .box4{
+            grid-area: box4;
+        }
+        .box5{
+            grid-area: box5;
+        }
+
+    </style>
+    <title>Grid </title>
+</head>
+<body>
+    <div class="grid">
+        <div class="box1" id="box" style="background-color: red;"></div>
+        <div class="box2" id="box" style="background-color: blue;"></div>
+        <div class="box3" id= "box" style="background-color: green;"></div>
+        <div class="box4" id="box" style="background-color: purple;"></div>
+        <div class="box5" id="box" style="background-color: yellow;"></div>
+        
+    </div>
+    
+</body>
+</html>
