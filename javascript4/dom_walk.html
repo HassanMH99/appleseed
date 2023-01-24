@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+    <script>
+        let change = document.querySelector('.start-here');
+        change.textContent = "main title"
+        const subtitle = change.nextElementSibling.querySelector("ul")
+        const newsub=document.createElement('li')
+        newsub.textContent = "subtitle 4"
+        subtitle.appendChild(newsub)
+        //delete last item
+        const list = document.querySelector('ul')
+        const lastli = list.lastElementChild;
+        lastli.remove();
+        //change the title name
+        document.title ="Master of the Dom"
+        //change the text p
+        const p = document.querySelector("p")
+        p.textContent ="Im a Professinal"
+
+    </script>
+  </body>
+</html>
