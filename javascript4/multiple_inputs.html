@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      form {
+        display: flex;
+        flex-direction: column; /* Change the flex direction to column */
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* To center the form on the page */
+      }
+
+      .input-container {
+        display: flex;
+      }
+
+      input {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+        font-size: 20px;
+        text-align: center;
+        background-color: #f7f7f7;
+        border: none;
+        border-bottom: 2px solid #ccc; /* Add a bottom border to the input fields */
+        outline: none; /* Remove the focus outline */
+      }
+
+      input:focus {
+        border-bottom-color: #4caf50; /* Change the border color when the input is focused */
+      }
+
+      #submit-btn {
+        margin-top: 24px; /* Add a margin-top to position the submit button under the input fields */
+        padding: 12px 24px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #submit-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+    <title>Input multiple</title>
+  </head>
+  <body>
+    <form>
+      <div class="input-container">
+        <input
+          type="text"
+          maxlength="1"
+          id="input-1"
+          oninput="focusNext(this)"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          id="input-2"
+          oninput="focusNext(this)"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          id="input-3"
+          oninput="focusNext(this)"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          id="input-4"
+          oninput="focusNext(this)"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          id="input-5"
+          oninput="focusNext(this)"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          id="input-6"
+          oninput="submitForm(this)"
+        />
+      </div>
+      <button type="Verify" id="submit-btn" disabled>Submit</button>
+    </form>
+
+    <script>
+      function focusNext(input) {
+        if (input.value.length === 0) {
+          const prevInput = input.previousElementSibling;
+          if (prevInput) {
+            prevInput.focus();
+          }
+        } else {
+          const nextInput = input.nextElementSibling;
+          if (nextInput) {
+            nextInput.focus();
+          }
+        }
+      }
+      function submitForm(input) {
+        let code = `${input.previousElementSibling.value}${input.value}`;
+        if (code.length <=6) {
+          document.getElementById("submit-btn").disabled = false;
+        }
+        console.log(code.length);
+      }
+      const inputs = document.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("paste", handlePaste);
+      });
+
+      function handlePaste(event) {
+        event.preventDefault();
+        const pastedText = event.clipboardData.getData("text");
+        let inputs = document.querySelectorAll("input");
+        inputs.forEach((input, index) => {
+          if (pastedText[index]) {
+            input.value = pastedText[index];
+          }
+        });
+      }
+   
+
+
+    </script>
+  </body>
+</html>
