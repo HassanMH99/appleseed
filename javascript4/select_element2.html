@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifying Elements</title>
+  </head>
+  <style>
+    h1 {
+      color: red;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1 id="h1">
+      I hate the color red. If only I was blue and I can sing "Im blue da da di
+      da da daaa"
+    </h1>
+    <p class="paragraph">I wish I was bigger</p>
+    <div id="description">Select me and change my display property</div>
+  </body>
+  <script>
+   let changecolor= document.getElementById('h1');
+   changecolor.style.color = "blue"
+   let changeparagrah = document.getElementsByClassName('paragraph');
+   for(let i=0;i<changeparagrah.length;i++){
+    changeparagrah[i].style.fontSize ="30px"
+   }
+   let display1 =document.getElementById('description')
+   display1.style.display="inline-block"
+   let body = document.querySelector("body");
+body.style.backgroundColor = "green";
+document.title = "My Modified Elements";
+        
+  </script>
+</html>
