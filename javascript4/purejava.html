@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let h1 = document.createElement("h1");
+      let h1text = document.createTextNode("Welecome To my website");
+      h1.appendChild(h1text);
+      document.body.appendChild(h1);
+      let h2 = document.createElement("h2");
+      let h2text = document.createTextNode("Mohammad Hassan");
+      h2.appendChild(h2text);
+      document.body.appendChild(h2);
+      let h3 = document.createElement("h3");
+      let h3text = document.createTextNode("Computer Engineering");
+      h3.appendChild(h3text);
+      document.body.appendChild(h3);
+
+      var ol = document.createElement("ol");
+      var oltext = document.createTextNode("Skills")
+      ol.appendChild(oltext)
+      var items = ["Html", "Css", "JavaScript"];
+      for (var i = 0; i < items.length; i++) {
+        var li = document.createElement("li");
+        var liText = document.createTextNode(items[i]);
+        li.appendChild(liText);
+        ol.appendChild(li);
+      }
+      document.body.appendChild(ol);
+
+      let body = document.body;
+      body.style.backgroundColor= "orange"
+    
+      let button = document.createElement("button")
+      let buttonText = document.createTextNode("LikeMe")
+        button.appendChild(buttonText)
+      body.appendChild(button)
+
+    </script>
+  </body>
+</html>
