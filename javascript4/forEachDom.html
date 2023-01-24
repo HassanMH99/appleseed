@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          id: 167464,
+          firstName: "Jimmy",
+          lastName: "Arnold",
+          email: "jimmya@gmail.com",
+        },
+        {
+          id: 578447,
+          firstName: "Martha",
+          lastName: "Goldman",
+          email: "gold@hotmail.com",
+        },
+        {
+          id: 864578,
+          firstName: "Tim",
+          lastName: "Burton",
+          email: "timmy.hotmail.com",
+        },
+      ];
+      const list = document.createElement("ol");
+      users.forEach((user) => {
+        const item = document.createElement("li");
+        item.textContent = `${user.firstName} ${user.lastName}`;
+        list.appendChild(item);
+      });
+      document.body.appendChild(list);
+      //to remov the bullet list
+      list.style.listStyle = "none";
+      //to add The id in the order list
+      users.forEach((user) => {
+        const item = document.createElement("li");
+        item.textContent = `${user.firstName} ${user.lastName}`;
+        item.setAttribute("data-id", user.id);
+        list.appendChild(item);
+      });
+    </script>
+  </body>
+</html>
