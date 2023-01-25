@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="lightbulb" src="https://toppng.com/uploads/preview/light-bulb-on-off-png-11553944387r25q4wkfyw.png" alt="Lightbulb">
+</body>
+<script>
+    var light = document.querySelector("img")
+    var isOn = false;
+    light.onclick= function(){
+        if(isOn){
+            light.src = "https://www.pngfind.com/pngs/m/24-247361_light-bulb-png-hd-light-bulb-clip-art.png"
+            isOn = false;
+            
+        }else{
+            light.src="https://toppng.com/uploads/preview/light-bulb-on-off-png-11553944387r25q4wkfyw.png"
+            isOn = true;
+        }
+    }
+</script>
+</html>
