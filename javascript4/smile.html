@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Smiley Generator</h1>
+    <input type="text" id="num" placeholder="Enter number of smileys">
+    <button id="button" onclick="generateSmileys()">Generate Smileys</button>
+    <p id="error" style="display: none;"></p>
+    <div id="smiley-container"></div>
+
+    <script>
+      function generateSmileys() {
+        var numSmileys = document.getElementById("num").value;
+
+        if (isNaN(numSmileys)) {
+          document.getElementById("error").innerHTML = "Please enter a valid number";
+          document.getElementById("error").style.display = "block";
+        } else {
+            document.getElementById("error").style.display = "none";
+            document.getElementById("smiley-container").innerHTML = "";
+
+          for (var i = 0; i < numSmileys; i++) {
+
+            var smiley = document.createElement("div");
+            smiley.innerHTML = "😃";
+            document.getElementById("smiley-container").appendChild(smiley);
+          }
+        }
+      }
+    </script>
+    
+</body>
+</html>
