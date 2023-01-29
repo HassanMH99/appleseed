@@ -21,6 +21,9 @@ td.active {
 #player2-race td.active {
   background-image: url(images/player_2.png);
 }
+#player3-race > td.active {
+  background-image: url(images/player_1.png);
+}
 
 td:last-child {
   background-image: url(images/finish.png);
@@ -38,4 +41,7 @@ td:last-child.active {
 
 #player2-race td:last-child.active {
   background-image: url(images/player_2.png), url("images/finish.png");
+}
+#player3-race td:last-child.active {
+  background-image: url(images/player_1.png), url("images/finish.png");
 }
