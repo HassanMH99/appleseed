@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        button{
+            width: 30%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="text">Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="number" >Age:</label>
+            <input type="number" id="age">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <script>
+        const submit = document.getElementById("submit")
+        submit.addEventListener('click',()=>{
+        const name = document.getElementById("name")
+        const age = document.getElementById("age")
+        const email = document.getElementById("email")
+        var massage ="Name:"+name.value+"\nAge:"+age.value+"\nEmail:"+email.value;
+        var confirm = window.confirm(massage+"\n\nit Is true Information?");
+        if(confirm==true){
+            alert("Congratulations! You successfully sent this form.");
+            } else {
+               document.getElementById("name").value = name;
+                document.getElementById("age").value = age;
+                document.getElementById("email").value = email;  
+        }
+
+        })
+    </script>
+</body>
+</html>
