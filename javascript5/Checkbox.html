@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    img{
+        width: 20%;
+    }
+    </style>
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="checkbox" name="photo" id="checkimage">
+    <img src="../tesla/tesla3.jpg" alt="" id="imgage">
+</body>
+<script>
+    const checkimage = document.getElementById("checkimage")
+    const img = document.getElementById("imgage")
+    checkimage.addEventListener('change',(e)=>{
+        if(checkimage.checked===true){
+        img.style.display="none"}
+        else{
+        img.style.display="block"}
+
+    })
+</script>
+
+</html>
