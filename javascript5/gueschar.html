@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+        input{
+            width: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <main onload="startGame()">
+        <h1>Welcome to Guess My letter</h1>
+        <input type="text" name="" id="input" maxlength="1" onkeyup="guessLetter()">
+        <div id="result"></div>
+        <h4>Key guessed</h4>
+        <div id="guesses"></div>
+    </main>
+
+</body>
+<script>
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    var letter =alphabet[Math.floor(Math.random() * alphabet.length)]   ;
+    var guessedLetters =[];
+    var gameOver = false;
+    function startGame(){
+      letter= alphabet[Math.floor(Math.random() * alphabet.length)]       
+       guessedLetters =[];
+        gameOver =false;
+        document.getElementById("guesses").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("input").disabled = false;
+        document.getElementById("input").value = "";
+        document.getElementById("input").focus();
+    }
+    function guessLetter() {
+        var input = document.getElementById("input").value;
+        if (!gameOver) {
+          if (input.length == 1 && input.match(/[a-z]/i)) {
+            if (guessedLetters.indexOf(input.toLowerCase()) == -1) {
+              guessedLetters.push(input.toLowerCase());
+              if (input.toLowerCase() ===letter) {
+                document.getElementById("result").innerHTML = "You are correct! The letter was " + letter + ".";
+                document.getElementById("result").style.color = "green";
+                gameOver = true;
+                document.getElementById("input").disabled = true;
+                if (confirm("Congratulations! Play again?")) {
+                  startGame();
+                }
+              } else {
+                console.log(letter);
+                document.getElementById("result").innerHTML = "Wrong guess.";
+                document.getElementById("result").style.color = "red";
+                document.getElementById("guesses").innerHTML = "Guessed letters: " + guessedLetters.join(", ");
+              }
+            } else {
+              document.getElementById("result").innerHTML = "You already guessed that letter.";
+              document.getElementById("result").style.color = "red";
+            }
+          } else {
+            document.getElementById("result").innerHTML = "Please enter a valid alphabetical letter.";
+            document.getElementById("result").style.color = "red";
+          }
+        }
+        document.getElementById("input").value = "";
+        document.getElementById("input").focus();
+      }
+
+
+</script>
+</html>
