@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <style>
+      .joke-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+ 
+
+    <script>
+      const fetchJokeBtn = document.createElement('button');
+fetchJokeBtn.innerText = 'Fetch Joke of the Day';
+document.body.appendChild(fetchJokeBtn);
+
+const jokeTitle = document.createElement('h1');
+jokeTitle.id = 'joke-title';
+jokeTitle.innerHTML = "The joke Title"
+document.body.appendChild(jokeTitle);
+
+const jokeText = document.createElement('p');
+jokeText.id = 'joke-text';
+jokeText.innerHTML = "The joke is"
+document.body.appendChild(jokeText);
+
+const init = () => {
+  fetchJokeBtn.addEventListener('click', () => {
+    fetch('https://api.jokes.one/jod')
+      .then(response => response.json())
+      .then(data => {
+        jokeTitle.innerText = data.contents.jokes[0].title;
+        jokeText.innerText = data.contents.jokes[0].text;
+      })
+      .catch(error => console.error(error));
+  });
+};
+
+document.addEventListener('DOMContentLoaded', init);
+
+    </script>
+  </body>
+</html>
