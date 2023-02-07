@@ -32,8 +32,8 @@ const init = () => {
     fetch('https://api.jokes.one/jod')
       .then(response => response.json())
       .then(data => {
-        jokeTitle.innerText = data.contents.jokes[0].title;
-        jokeText.innerText = data.contents.jokes[0].text;
+        jokeTitle.innerText = data.contents.jokes[0].joke.title;
+        jokeText.innerText = data.contents.jokes[0].joke.text;
       })
       .catch(error => console.error(error));
   });

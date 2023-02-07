@@ -32,8 +32,9 @@ fetchJokeBtn.addEventListener('click', async () => {
 try {
 const response = await fetch('https://api.jokes.one/jod');
 const data = await response.json();
-jokeTitle.innerText = data.contents.jokes[0].title;
-jokeText.innerText = data.contents.jokes[0].text;
+console.log(data);
+jokeTitle.innerText = data.contents.jokes[0].joke.title;
+jokeText.innerText = data.contents.jokes[0].joke.text;
 } catch (error) {
 console.error(error);
 }
