@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        width: 50%;
+        padding: 8px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      .profile-card {
+        width: 50%;
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 16px 0;
+      }
+
+      .profile-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    </style>
+    <title>GitHubAPI</title>
+  </head>
+  <body>
+    <div class="container">
+      <input
+        type="text"
+        id="username-input"
+        placeholder="Enter a GitHub username"
+      />
+      <button id="search-btn">Search</button>
+      <div id="profile-cards"></div>
+    </div>
+
+    <script>
+      const usernameInput = document.getElementById("username-input");
+      const searchBtn = document.getElementById("search-btn");
+      const profileCards = document.getElementById("profile-cards");
+
+      searchBtn.addEventListener("click", () => {
+        const username = usernameInput.value;
+        fetch(`https://api.github.com/users/${username}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const profileCard = createProfileCard(data);
+            profileCards.appendChild(profileCard);
+            usernameInput.value = "";
+            usernameInput.focus();
+          })
+          .catch((error) => {
+            console.error(error);
+            alert("An error occurred while fetching the profile.");
+          });
+      });
+
+      const createProfileCard = (data) => {
+        const profileCard = document.createElement("div");
+        profileCard.classList.add("profile-card");
+
+        const avatarImg = document.createElement("img");
+        avatarImg.src = data.avatar_url;
+        profileCard.appendChild(avatarImg);
+
+        const name = document.createElement("p");
+        name.textContent = data.name;
+        profileCard.appendChild(name);
+
+        const repoCount = document.createElement("p");
+        repoCount.textContent = `Public Repos: ${data.public_repos}`;
+        profileCard.appendChild(repoCount);
+
+        profileCard.addEventListener("click", () => {
+          window.open(data.html_url, "_blank");
+        });
+
+        return profileCard;
+      };
+    </script>
+  </body>
+</html>
